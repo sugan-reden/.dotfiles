@@ -31,7 +31,7 @@ config.term = "xterm-256color" -- deactivated to test if fzf works
 -- config.default_prog = { "C:/msys64/msys2.exe" }
 
 -- | Window Settings | --
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.8
 config.text_background_opacity = 0.9
 config.prefer_egl = true
 config.font_size = 14
