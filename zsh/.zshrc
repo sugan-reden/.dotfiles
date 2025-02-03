@@ -13,8 +13,8 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Add Oh My Posh here
-#
+# Add prompt customization, using oh-my-posh
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/omp.toml)"
 
 # Add zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
