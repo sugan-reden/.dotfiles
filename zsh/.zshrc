@@ -8,7 +8,8 @@ if [ ! -d "$ZINIT_HOME" ]; then
 fi
 
 # Add directories to shell PATH
-# PATH="$HOME/.go/bin:$PATH"
+# go binaries install dir, at ~/go/bin
+PATH="$HOME/go/bin:$PATH"
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
