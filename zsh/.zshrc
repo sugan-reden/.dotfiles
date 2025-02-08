@@ -10,6 +10,8 @@ fi
 # Add directories to shell PATH
 # go binaries install dir, at ~/go/bin
 PATH="$HOME/go/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
+export npm_config_prefix="$HOME/.local/"
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
