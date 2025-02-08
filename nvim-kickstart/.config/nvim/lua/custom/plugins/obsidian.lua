@@ -19,8 +19,8 @@ return {
   opts = {
     workspaces = {
       {
-        name = 'notes-na',
-        path = '/mnt/c/Users/reden/notes/na/',
+        name = 'sr',
+        path = '$HOME/notes/sr',
         overrides = {
           notes_subdir = '00-zettelkasten',
         },
