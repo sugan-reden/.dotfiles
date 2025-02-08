@@ -40,6 +40,15 @@ final_space = true
       commit_icon = '@'
       fetch_status = true
 
+  [[blocks.segments]]
+    type = "python"
+    style = "powerline"
+    powerline_symbol = ""
+    foreground = "#100e23"
+    background = "#906cff"
+    # template = "  {{ .Full }} "
+    template = "  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}"
+
 [[blocks]]
   type = 'rprompt'
   overflow = 'hidden'
