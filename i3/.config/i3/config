@@ -18,7 +18,7 @@ exec --no-startup-id picom
 # exec_always --no-startup-id polybar
 exec_always --no-startup-id ~/.config/polybar/launch_reden-polybar.sh
 # feh startup cmd -- from typecraft
-exec_always --no-startup-id feh --bg-scale ~/.config/backgrounds/wallhaven-1p6d79_1920x1080.png
+exec_always --no-startup-id feh --bg-scale ~/.backgrounds/wallhaven-1p6d79_2560x1440.png
 # rofi config, start from keybind -- from typecraft
 bindsym $mod+space exec rofi -show combi
 
