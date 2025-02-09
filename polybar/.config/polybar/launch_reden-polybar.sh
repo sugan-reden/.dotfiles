@@ -20,5 +20,12 @@ if type "xrandr"; then
 else
   polybar --reload reden-bar &
 fi
-
+# ### Default example
+# if type "xrandr"; then
+#   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+#     MONITOR=$m polybar --reload reden-bar &
+#   done
+# else
+#   polybar --reload reden-bar &
+# fi
 echo "Bars launched..."
