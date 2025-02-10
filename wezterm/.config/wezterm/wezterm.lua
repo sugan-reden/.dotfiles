@@ -143,39 +143,39 @@ config.keys = {
 -- This following is also taken from Coding Sphere's config.
 -- The modified colorscheme is this one.
 -- config.color_scheme = "Cloud (terminal.sexy)"
-config.colors = {
-	background = "#0c0b0f",
-	cursor_border = "#bea3c7",
-	cursor_bg = "#bea3c7",
-
-	tab_bar = {
-		background = "#0c0b0f",
-		active_tab = {
-			bg_color = "#0c0b0f",
-			fg_color = "#bea3c7",
-			intensity = "Normal",
-			-- underline = "None",
-			-- italic = false,
-			-- strikethrough = false,
-		},
-		inactive_tab = {
-			bg_color = "#0c0b0f",
-			fg_color = "#f8f2f5",
-			intensity = "Normal",
-			-- underline = "None",
-			-- italic = false,
-			-- strikethrough = false,
-		},
-		new_tab = {
-			bg_color = "0c0b0f",
-			fg_color = "white",
-		},
-	},
-}
+-- config.colors = {
+-- 	background = "#0c0b0f",
+-- 	cursor_border = "#bea3c7",
+-- 	cursor_bg = "#bea3c7",
+--
+-- 	tab_bar = {
+-- 		background = "#0c0b0f",
+-- 		active_tab = {
+-- 			bg_color = "#0c0b0f",
+-- 			fg_color = "#bea3c7",
+-- 			intensity = "Normal",
+-- 			-- underline = "None",
+-- 			-- italic = false,
+-- 			-- strikethrough = false,
+-- 		},
+-- 		inactive_tab = {
+-- 			bg_color = "#0c0b0f",
+-- 			fg_color = "#f8f2f5",
+-- 			intensity = "Normal",
+-- 			-- underline = "None",
+-- 			-- italic = false,
+-- 			-- strikethrough = false,
+-- 		},
+-- 		new_tab = {
+-- 			bg_color = "0c0b0f",
+-- 			fg_color = "white",
+-- 		},
+-- 	},
+-- }
 
 config.window_frame = {
 	font = wezterm.font({ family = "M+1Code Nerd Font", weight = "Regular" }),
-	active_titlebar_bg = "#0c0b0f",
+	-- active_titlebar_bg = "#0c0b0f",
 }
 
 -- config.window_decorations = "NONE | RESIZE"
