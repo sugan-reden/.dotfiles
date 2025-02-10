@@ -70,8 +70,10 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --icons=always --color=
 # Aliases
 alias ls='ls --color'
 alias l='eza --icons=always'
+alias ll='l -l'
+alias la='l -lAh'
 alias nvim='nvim'
-alias c='clear'
+alias cl='clear'
 alias lgit='lazygit'
 
 # Shell integrations
