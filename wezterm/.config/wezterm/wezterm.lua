@@ -47,7 +47,7 @@ config.window_padding = {
 }
 
 -- | Tab Settings | --
-config.hide_tab_bar_if_only_one_tab = false
+config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
 
 -- | Color Scheme Toggling | --
