@@ -12,8 +12,9 @@ local config = wezterm.config_builder()
 -- config.color_scheme = "Tokyo Night"
 -- config.color_scheme = "Tokyo Night Moon"
 -- config.color_scheme = "Tokyo Night Storm"
-config.color_scheme = "Cloud (terminal.sexy)"
+-- config.color_scheme = "Cloud (terminal.sexy)"
 -- config.color_scheme = "Zenburn"
+config.color_scheme = "Kanagawa (Gogh)"
 
 -- | My fonts | --
 config.font = wezterm.font("M+1Code Nerd Font")
