@@ -73,7 +73,7 @@ alias l='eza --icons=always'
 alias ll='l -l'
 alias la='l -lAh'
 alias nvim='nvim'
-alias cl='clear'
+alias c='clear'
 alias lgit='lazygit'
 
 # Shell integrations
