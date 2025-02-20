@@ -71,7 +71,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --icons=always --color=
 alias ls='ls --color'
 alias l='eza --icons=always'
 alias ll='l -l'
-alias la='l -lAh'
+alias la='l -lAhg'
 alias nvim='nvim'
 alias c='clear'
 alias lgit='lazygit'
