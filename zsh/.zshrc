@@ -12,6 +12,7 @@ fi
 PATH="$HOME/go/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 export npm_config_prefix="$HOME/.local/"
+export SDL_VIDEODRIVER=wayland
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
