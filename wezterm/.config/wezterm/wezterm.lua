@@ -32,7 +32,7 @@ config.term = "xterm-256color" -- deactivated to test if fzf works
 -- config.default_prog = { "C:/msys64/msys2.exe" }
 
 -- | Window Settings | --
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.75
 config.text_background_opacity = 0.9
 config.prefer_egl = true
 config.font_size = 14
@@ -125,7 +125,7 @@ config.keys = {
 		action = wezterm.action_callback(function(window, _)
 			local overrides = window:get_config_overrides() or {}
 			if overrides.window_background_opacity == 1.0 then
-				overrides.window_background_opacity = 0.9
+				overrides.window_background_opacity = 0.75
 			else
 				overrides.window_background_opacity = 1.0
 			end
