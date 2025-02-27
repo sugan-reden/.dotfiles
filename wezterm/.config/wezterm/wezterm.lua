@@ -72,47 +72,47 @@ config.keys = {
 		mods = "CTRL|ALT|SHIFT",
 		action = act.EmitEvent("toggle-colorscheme")
 	}, ]]
-	{
-		key = "H",
-		mods = "CTRL|SHIFT|ALT",
-		action = act.SplitPane({
-			direction = "Right",
-			size = { Percent = 50 },
-		}),
-	},
-	{
-		key = "V",
-		mods = "CTRL|SHIFT|ALT",
-		action = act.SplitPane({
-			direction = "Down",
-			size = { Percent = 50 },
-		}),
-	},
-	{
-		key = "U",
-		mods = "CTRL|SHIFT",
-		action = act.AdjustPaneSize({ "Left", 5 }),
-	},
-	{
-		key = "I",
-		mods = "CTRL|SHIFT",
-		action = act.AdjustPaneSize({ "Down", 5 }),
-	},
-	{
-		key = "O",
-		mods = "CTRL|SHIFT",
-		action = act.AdjustPaneSize({ "Up", 5 }),
-	},
-	{
-		key = "P",
-		mods = "CTRL|SHIFT",
-		action = act.AdjustPaneSize({ "Right", 5 }),
-	},
-	{
-		key = "9",
-		mods = "CTRL",
-		action = act.PaneSelect,
-	},
+	-- {
+	-- 	key = "H",
+	-- 	mods = "CTRL|SHIFT|ALT",
+	-- 	action = act.SplitPane({
+	-- 		direction = "Right",
+	-- 		size = { Percent = 50 },
+	-- 	}),
+	-- },
+	-- {
+	-- 	key = "V",
+	-- 	mods = "CTRL|SHIFT|ALT",
+	-- 	action = act.SplitPane({
+	-- 		direction = "Down",
+	-- 		size = { Percent = 50 },
+	-- 	}),
+	-- },
+	-- {
+	-- 	key = "U",
+	-- 	mods = "CTRL|SHIFT",
+	-- 	action = act.AdjustPaneSize({ "Left", 5 }),
+	-- },
+	-- {
+	-- 	key = "I",
+	-- 	mods = "CTRL|SHIFT",
+	-- 	action = act.AdjustPaneSize({ "Down", 5 }),
+	-- },
+	-- {
+	-- 	key = "O",
+	-- 	mods = "CTRL|SHIFT",
+	-- 	action = act.AdjustPaneSize({ "Up", 5 }),
+	-- },
+	-- {
+	-- 	key = "P",
+	-- 	mods = "CTRL|SHIFT",
+	-- 	action = act.AdjustPaneSize({ "Right", 5 }),
+	-- },
+	-- {
+	-- 	key = "9",
+	-- 	mods = "CTRL",
+	-- 	action = act.PaneSelect,
+	-- },
 	{
 		key = "L",
 		mods = "CTRL|SHIFT",
@@ -132,11 +132,11 @@ config.keys = {
 			window:set_config_overrides(overrides)
 		end),
 	},
-	{
-		key = "w",
-		mods = "CTRL",
-		action = act.CloseCurrentPane({ confirm = true }),
-	},
+	-- {
+	-- 	key = "w",
+	-- 	mods = "CTRL",
+	-- 	action = act.CloseCurrentPane({ confirm = true }),
+	-- },
 }
 
 -- | Color Adjustments | --
@@ -178,7 +178,7 @@ config.window_frame = {
 	-- active_titlebar_bg = "#0c0b0f",
 }
 
--- config.window_decorations = "NONE | RESIZE"
+config.window_decorations = "NONE | RESIZE"
 config.initial_cols = 120
 
 -- and finally, return the configuration to wezterm
