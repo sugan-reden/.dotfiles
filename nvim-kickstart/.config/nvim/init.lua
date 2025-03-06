@@ -154,6 +154,19 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 22
 
+vim.opt.spell = false
+vim.opt.spelllang = 'en_us'
+vim.api.nvim_create_augroup('Spellcheck', { clear = true })
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+  group = 'Spellcheck',
+  pattern = { 'typst' },
+  callback = function()
+    vim.opt_local.spell = true
+  end,
+  desc = 'Enable spellcheck for Typst files',
+})
+vim.opt.spellsuggest = 'best,9'
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -853,20 +866,20 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
-    -- 'catppuccin/nvim',
+    -- 'folke/tokyonight.nvim',
+    'catppuccin/nvim',
     -- 'rebelot/kanagawa.nvim',
-    -- name = 'catppuccin',
+    name = 'catppuccin',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       -- vim.cmd.colorscheme 'tokyonight-night'
-      vim.cmd.colorscheme 'tokyonight-moon'
+      -- vim.cmd.colorscheme 'tokyonight-moon'
       -- vim.cmd.colorscheme 'tokyonight-storm'
       -- vim.cmd.colorscheme 'catppuccin-macchiato'
-      -- vim.cmd.colorscheme 'catppuccin-mocha'
+      vim.cmd.colorscheme 'catppuccin-mocha'
       -- vim.cmd.colorscheme 'catppuccin-frappe'
       -- vim.cmd.colorscheme 'kanagawa-wave' -- default flavor
       -- vim.cmd.colorscheme 'kanagawa-dragon' -- darker flavor
@@ -937,6 +950,7 @@ require('lazy').setup({
         'python',
         'rst',
         'sql',
+        'typst',
         'vim',
         'vimdoc',
         'gdscript',
