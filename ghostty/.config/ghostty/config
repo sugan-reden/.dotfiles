@@ -42,10 +42,43 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 # ---
-# My Config
+# # My Config #
+# ## Fonts ##
 # font-family = ""
 # font-family = "M+1Code Nerd Font"
 # font-synthetic-style = true
 font-size = 14
 
+# ## Themes ##
 theme = light:rose-pine-dawn,dark:tokyonight
+
+# ## Shaders ##
+# ### My Preferred Combo 1
+# custom-shader = ~/.config/ghostty/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix.glsl
+custom-shader = ~/.config/ghostty/ghostty-shaders/bettercrt.glsl
+custom-shader = ~/.config/ghostty/ghostty-shaders/bloom.glsl
+
+# ### My Preferred Combo 2 ###
+# custom-shader = ~/.config/ghostty/ghostty-shaders/in-game-crt.glsl
+
+
+# ### Tests ###
+# custom-shader = ~/.config/ghostty/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix.glsl
+
+# this is fucked
+# custom-shader = ~/.config/ghostty/ghostty-shaders/crt.glsl
+
+# this works well
+# custom-shader = ~/.config/ghostty/ghostty-shaders/bettercrt.glsl
+
+# works
+# custom-shader = ~/.config/ghostty/ghostty-shaders/in-game-crt.glsl
+
+# custom-shader = ~/.config/ghostty/ghostty-shaders/retro-terminal.glsl
+
+# custom-shader = ~/.config/ghostty/ghostty-shaders/glitchy.glsl
+
+# custom-shader = ~/.config/ghostty/ghostty-shaders/glow-rgbsplit-twitchy.glsl
+
+# custom-shader = ~/.config/ghostty/ghostty-shaders/bloom.glsl
+
