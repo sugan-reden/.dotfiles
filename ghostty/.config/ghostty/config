@@ -55,8 +55,10 @@ theme = light:rose-pine-dawn,dark:tokyonight
 # ## Shaders ##
 # ### My Preferred Combo 1
 # custom-shader = ~/.config/ghostty/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix.glsl
-custom-shader = ~/.config/ghostty/ghostty-shaders/bettercrt.glsl
-custom-shader = ~/.config/ghostty/ghostty-shaders/bloom.glsl
+
+# custom-shader = ~/.config/ghostty/ghostty-shaders/bettercrt.glsl
+
+# custom-shader = ~/.config/ghostty/ghostty-shaders/bloom.glsl
 
 # ### My Preferred Combo 2 ###
 # custom-shader = ~/.config/ghostty/ghostty-shaders/in-game-crt.glsl
