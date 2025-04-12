@@ -21,9 +21,9 @@ return {
       {
         name = 'sr',
         path = '$HOME/notes/sr',
-        overrides = {
-          notes_subdir = '00-zettelkasten',
-        },
+        -- overrides = {
+        --   notes_subdir = '00-zettelkasten',
+        -- },
       },
       --[[ {
         name = 'work',
@@ -33,7 +33,7 @@ return {
         },
       }, ]]
     },
-    notes_subdir = '00-zettelkasten',
+    -- notes_subdir = '00-zettelkasten',
 
     log_level = vim.log.levels.ERROR,
 
