@@ -14,6 +14,10 @@ PATH="$HOME/.local/bin:$PATH"
 export npm_config_prefix="$HOME/.local/"
 export SDL_VIDEODRIVER=wayland
 
+# add emacs binaries to PATH
+export PATH="$HOME/.config/emacs/bin:$PATH"
+
+
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
@@ -76,6 +80,7 @@ alias la='l -lAhg'
 alias nvim='nvim'
 alias c='clear'
 alias lgit='lazygit'
+alias emacs="emacsclient -c -a 'emacs' &"
 
 # Shell integrations
 eval "$(fzf --zsh)"
