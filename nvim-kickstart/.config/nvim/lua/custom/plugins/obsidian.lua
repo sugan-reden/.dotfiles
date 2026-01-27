@@ -33,7 +33,7 @@ return {
         -- },
       },
     },
-    notes_subdir = '00-zettelkasten',
+    -- notes_subdir = '00-zettelkasten',
 
     log_level = vim.log.levels.ERROR,
 
