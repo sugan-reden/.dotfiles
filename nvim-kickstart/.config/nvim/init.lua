@@ -152,7 +152,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 22
+vim.opt.scrolloff = 12
 
 vim.opt.spell = false
 vim.opt.spelllang = 'en_us'
