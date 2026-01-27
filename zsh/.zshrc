@@ -16,6 +16,9 @@ export SDL_VIDEODRIVER=wayland
 # linuxbrew specific
 PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
+# bench env variables
+PATH="/home/reden/.local/bin/bench:$PATH"
+
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
