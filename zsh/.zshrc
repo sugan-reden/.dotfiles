@@ -7,7 +7,7 @@ if [ ! -d "$ZINIT_HOME" ]; then
   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
-# Add directories to shell PATH
+# === Add directories to shell PATH ===
 # go binaries install dir, at ~/go/bin
 PATH="$HOME/go/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
