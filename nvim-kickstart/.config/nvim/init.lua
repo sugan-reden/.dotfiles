@@ -1218,21 +1218,21 @@ require('fidget').setup {
   },
 }
 
--- VSCode-style output window
-local Terminal = require('toggleterm.terminal').Terminal
-local log_output = Terminal:new {
-  cmd = 'lsp-devtools record --port ' .. LSP_DEVTOOLS_PORT .. " -f '{.params.message}'",
-  hidden = false,
-  direction = 'horizontal',
-  auto_scroll = true,
-}
+-- -- VSCode-style output window
+-- local Terminal = require('toggleterm.terminal').Terminal
+-- local log_output = Terminal:new {
+--   cmd = 'lsp-devtools record --port ' .. LSP_DEVTOOLS_PORT .. " -f '{.params.message}'",
+--   hidden = false,
+--   direction = 'horizontal',
+--   auto_scroll = true,
+-- }
 
--- Ensure that the terminal is launched, so that it can connect to the server.
-log_output:spawn()
-
-function _log_output_toggle()
-  log_output:toggle()
-end
+-- -- Ensure that the terminal is launched, so that it can connect to the server.
+-- log_output:spawn()
+--
+-- function _log_output_toggle()
+--   log_output:toggle()
+-- end
 
 local keymap_opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<leader>wl', '<cmd>lua _log_output_toggle()<CR>', keymap_opts)
