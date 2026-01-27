@@ -20,18 +20,18 @@ return {
     workspaces = {
       {
         name = 'sr',
-        path = '$HOME/notes/sr',
-        overrides = {
-          notes_subdir = '00-zettelkasten',
-        },
+        path = '~/notes/sr',
+        -- overrides = {
+        -- notes_subdir = '00-zettelkasten',
+        -- },
       },
-      --[[ {
-        name = 'work',
-        path = './na-notes/*.md',
-        overrides = {
-          notes_subdir = '00-zettelkasten',
-        },
-      }, ]]
+      {
+        name = 'ao',
+        path = '~/notes/ao',
+        -- overrides = {
+        --   notes_subdir = '00-zettelkasten',
+        -- },
+      },
     },
     notes_subdir = '00-zettelkasten',
 
