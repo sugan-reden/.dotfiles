@@ -27,6 +27,8 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 
+# == Add Emacs binaries, at ~/.config/emacs/bin ==
+PATH="$HOME/.config/emacs/bin:$PATH"
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
