@@ -1258,6 +1258,8 @@ vim.api.nvim_set_keymap('n', '<leader>wl', '<cmd>lua _log_output_toggle()<CR>', 
 vim.filetype.add {
   filename = {
     ['.dj'] = 'djot',
+    ['.timedot'] = 'timedot',
+    ['.mdx'] = 'markdown',
   },
 }
 
@@ -1269,5 +1271,8 @@ vim.filetype.add {
 -- })
 
 vim.treesitter.language.register('djot', { 'dj' })
+vim.treesitter.language.register('timedot', { 'timedot' })
+vim.treesitter.language.register('markdown', { 'mdx' })
+vim.treesitter.language.register('markdown_inline', { 'mdx' })
 
 -- END OF FILE
