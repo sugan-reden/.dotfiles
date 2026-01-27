@@ -636,8 +636,8 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         clangd = {},
-        gopls = {},
-        pyright = {},
+        -- gopls = {},
+        -- pyright = {},
         rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -688,7 +688,11 @@ require('lazy').setup({
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
+            -- require('lspconfig')[server_name].setup(server)
+            -- vim.lsp.config([server_name].setup(server))
+            -- vim.lsp.config(server_name.setup(server))
+            -- vim.lsp.config[server_name].setup(server)
+            vim.lsp.config(server_name).setup(server)
           end,
         },
       }
@@ -701,7 +705,8 @@ require('lazy').setup({
         --Windows specific. Requires nmap installed ('winget install nmap')
         gdscript_config['cmd'] = { 'ncat', 'localhost', os.getenv 'GDScript_Port' or '6005' }
       end
-      require('lspconfig').gdscript.setup(gdscript_config)
+      -- require('lspconfig').gdscript.setup(gdscript_config)
+      vim.lsp.config('gdscript', gdscript_config)
     end,
   },
 
@@ -1114,97 +1119,97 @@ end
 ------------------------------------------------
 -- Esbonio config | Python Environment Discovery
 ------------------------------------------------
-local lspconfig = require 'lspconfig'
-local util = require 'lspconfig.util'
-
-local LSP_DEVTOOLS_PORT = '91234'
-
-vim.lsp.set_log_level 'info'
-
-local function scroll_view(ev)
-  local esbonio = vim.lsp.get_active_clients({ bufnr = 0, name = 'esbonio' })[1]
-  local view = vim.fn.winsaveview()
-
-  local params = { line = view.topline }
-  esbonio.notify('view/scroll', params)
-end
-
-local function preview_file()
-  local_params = {
-    command = 'esbonio.server.previewFile',
-    arguments = {
-      { uri = vim.uri_from_bufnr(0), show = false },
-    },
-  }
-  local result = vim.lsp.buf.execute_command(params)
-  print(vim.inspect(result))
-
-  -- Setup sync scrolling
-  local augroup = vim.api.nvim_create_augroup('EsbonioSyncScroll', { clear = true })
-  vim.api.nvim_create_autocmd({ 'WinScrolled' }, {
-    callback = scroll_view,
-    group = augroup,
-    buffer = 0,
-  })
-end
-
--- Attempt to fin a virtualenv that the server can use to build the docs.
-
-local function find_venv()
-  -- If there is an active virtual env, use that
-  if vim.env.VIRTUAL_ENV then
-    return { vim.env.VIRTUAL_ENV .. '/bin/python' }
-  end
-
-  -- Search within the current git repo to see if we can find a virtual env to use.
-  local repo = util.find_git_ancestor(vim.fn.getcwd())
-  if not repo then
-    return nil
-  end
-
-  local candidates = vim.fs.find('pyenv.cfg', { path = repo })
-  if #candidates == 0 then
-    return nil
-  end
-
-  return { vim.fn.resolve(candidates[1] .. './../bin/python') }
-end
-
-lspconfig.esbonio.setup {
-  -- Wrap server the the lsp-devtools agen so that we can create our own VSCode style output window.
-  cmd = { 'lsp-devtools', 'agent', '--port', LSP_DEVTOOLS_PORT, '--', 'esbonio' },
-  init_options = {
-    logging = {
-      level = 'debug',
-      -- Redirect logging output to window/logMessage notifications so that lsp-devtools can capture it.
-      stderr = false,
-      window = true,
-    },
-  },
-  settings = {
-    esbonio = {
-      sphinx = {
-        pythonCommand = find_venv(),
-      },
-    },
-  },
-  handlers = {
-    ['editor/scroll'] = function(err, result, ctx, config)
-      vim.cmd('normal ' .. result.line .. 'Gzt')
-    end,
-  },
-  on_attach = function(client, bufnr)
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-    local bufopts = { noremap = true, silent = true, buffer = bufnr }
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', 'gh', vim.lsp.buf.hover, bufopts)
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-
-    vim.api.nvim_create_user_command('EsbonioPreviewFile', preview_file, { desc = 'Preview File' })
-  end,
-}
+-- local esb_lspconfig = vim.lsp.config
+-- local util = vim.lsp.config.util
+--
+-- local LSP_DEVTOOLS_PORT = '91234'
+--
+-- vim.lsp.log.set_level 'info'
+--
+-- local function scroll_view(ev)
+--   local esbonio = vim.lsp.get_active_clients({ bufnr = 0, name = 'esbonio' })[1]
+--   local view = vim.fn.winsaveview()
+--
+--   local params = { line = view.topline }
+--   esbonio.notify('view/scroll', params)
+-- end
+--
+-- local function preview_file()
+--   local_params = {
+--     command = 'esbonio.server.previewFile',
+--     arguments = {
+--       { uri = vim.uri_from_bufnr(0), show = false },
+--     },
+--   }
+--   local result = vim.lsp.buf.execute_command(params)
+--   print(vim.inspect(result))
+--
+--   -- Setup sync scrolling
+--   local augroup = vim.api.nvim_create_augroup('EsbonioSyncScroll', { clear = true })
+--   vim.api.nvim_create_autocmd({ 'WinScrolled' }, {
+--     callback = scroll_view,
+--     group = augroup,
+--     buffer = 0,
+--   })
+-- end
+--
+-- -- Attempt to fin a virtualenv that the server can use to build the docs.
+--
+-- local function find_venv()
+--   -- If there is an active virtual env, use that
+--   if vim.env.VIRTUAL_ENV then
+--     return { vim.env.VIRTUAL_ENV .. '/bin/python' }
+--   end
+--
+--   -- Search within the current git repo to see if we can find a virtual env to use.
+--   local repo = util.find_git_ancestor(vim.fn.getcwd())
+--   if not repo then
+--     return nil
+--   end
+--
+--   local candidates = vim.fs.find('pyenv.cfg', { path = repo })
+--   if #candidates == 0 then
+--     return nil
+--   end
+--
+--   return { vim.fn.resolve(candidates[1] .. './../bin/python') }
+-- end
+--
+-- esb_lspconfig.esbonio.setup {
+--   -- Wrap server the the lsp-devtools agen so that we can create our own VSCode style output window.
+--   cmd = { 'lsp-devtools', 'agent', '--port', LSP_DEVTOOLS_PORT, '--', 'esbonio' },
+--   init_options = {
+--     logging = {
+--       level = 'debug',
+--       -- Redirect logging output to window/logMessage notifications so that lsp-devtools can capture it.
+--       stderr = false,
+--       window = true,
+--     },
+--   },
+--   settings = {
+--     esbonio = {
+--       sphinx = {
+--         pythonCommand = find_venv(),
+--       },
+--     },
+--   },
+--   handlers = {
+--     ['editor/scroll'] = function(err, result, ctx, config)
+--       vim.cmd('normal ' .. result.line .. 'Gzt')
+--     end,
+--   },
+--   on_attach = function(client, bufnr)
+--     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+--
+--     local bufopts = { noremap = true, silent = true, buffer = bufnr }
+--     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+--     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+--     vim.keymap.set('n', 'gh', vim.lsp.buf.hover, bufopts)
+--     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+--
+--     vim.api.nvim_create_user_command('EsbonioPreviewFile', preview_file, { desc = 'Preview File' })
+--   end,
+-- }
 
 -- UI for $/progress and other notifications
 require('fidget').setup {
