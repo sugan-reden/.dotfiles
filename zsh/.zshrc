@@ -19,6 +19,15 @@ PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 # bench env variables
 PATH="/home/reden/.local/bin/bench:$PATH"
 
+# fnm PATH env variables for linux/WSL
+# fnm
+FNM_PATH="/home/reden/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/reden/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
