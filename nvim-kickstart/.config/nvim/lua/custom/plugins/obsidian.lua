@@ -47,7 +47,7 @@ return {
     -- Where to put new notes. Valid options are
     -- * 'current_dir' - put new notes in the same directory as the currend buffer.
     -- * 'notes_subdir' - put new notes in the default notes subdirectory.
-    new_notes_location = 'notes_subdir',
+    new_notes_location = 'current_dir',
 
     -- Set you preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', or 'mini.pick'.
     picker = {
