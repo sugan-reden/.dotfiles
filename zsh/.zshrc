@@ -27,6 +27,8 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 
+# == Add Snap binaries to PATH, /snap/bin/ ==
+PATH="/snap/bin:$PATH"
 # == Add Emacs binaries, at ~/.config/emacs/bin ==
 PATH="$HOME/.config/emacs/bin:$PATH"
 
