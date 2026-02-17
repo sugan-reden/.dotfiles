@@ -82,3 +82,4 @@
 
 ;; CUSTOM
 (add-to-list 'auto-mode-alist '("\\.journal\\'" . ledger-mode))
+;; (add-to-list 'auto-mode-alist '("\\.timedot\\'" . ledger-mode))
