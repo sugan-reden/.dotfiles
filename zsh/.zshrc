@@ -25,6 +25,11 @@ export PATH
 export npm_config_prefix="$HOME/.local/"
 ## SDL, adjusting driver for wayland
 export SDL_VIDEODRIVER=wayland
+## settings modules for fcitx according to documentation
+export QT_IM_MODULE=
+export GTK_IM_MODULE=
+export SDL_IM_MODULE=
+export XMODIFIERS=@im=fcitx
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
