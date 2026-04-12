@@ -7,16 +7,24 @@ if [ ! -d "$ZINIT_HOME" ]; then
   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
-# Add directories to shell PATH
-# go binaries install dir, at ~/go/bin
+# Add binary directories to shell PATH or to make them available
+## go binaries install dir, at ~/go/bin
 PATH="$HOME/go/bin:$PATH"
-PATH="$HOME/.local/bin:$PATH"
-export npm_config_prefix="$HOME/.local/"
-export SDL_VIDEODRIVER=wayland
-
-# add emacs binaries to PATH
+## local and HOME binaries to PATH
+PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+## brew binaries
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+## emacs binaries to PATH
 export PATH="$HOME/.config/emacs/bin:$PATH"
+## === export PATH ===
+export PATH
 
+# Add/Set environment variables
+## npm
+export npm_config_prefix="$HOME/.local/"
+## SDL, adjusting driver for wayland
+export SDL_VIDEODRIVER=wayland
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
