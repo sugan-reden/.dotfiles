@@ -74,3 +74,7 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; CUSTOM SR
+(add-to-list 'auto-mode-alist '("\\.journal\\'" . ledger-mode))
+(add-to-list 'auto-mode-alist '("\\.timedot\\'" . ledger-mode))
