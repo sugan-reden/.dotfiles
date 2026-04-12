@@ -86,14 +86,20 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --icons=always --color=
 # zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
+## ls
 alias ls='ls --color'
 alias l='eza --icons=always'
 alias ll='l -l'
 alias la='l -lAhg'
+## nvim
 alias nvim='nvim'
+## terminal
 alias c='clear'
+## git
 alias lgit='lazygit'
-alias emacs="emacsclient -c -a 'emacs' &"
+## emacs
+alias emd="emacs --daemon"
+alias emc="emacsclient -nc -a ''"
 
 # Shell integrations
 eval "$(fzf --zsh)"
